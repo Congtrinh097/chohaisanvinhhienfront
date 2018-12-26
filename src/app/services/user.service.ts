@@ -22,6 +22,16 @@ export class UserService {
   constructor(private http: HttpClient) { }
   /** GET: get user from database */
   getUsers (): Observable<User[]> {
-    return this.http.get<User[]>(this.url,httpOptions);
+    return this.http.get<User[]>(this.url, httpOptions);
   }
+
+  addUser(user: User): Observable<User> {
+    console.log(user);
+    return this.http.post<User>(this.url, user, httpOptions);
+  }
+
+  deleteUser(id: string): Observable<User> {
+    return this.http.delete<User>(this.url, httpOptions);
+  }
+  
 }

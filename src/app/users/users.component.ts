@@ -11,7 +11,7 @@ import { User } from '../models/User';
 export class UsersComponent implements OnInit {
 
   users: User[];
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService) { }
   
   getUsers(): void {
     this.userService.getUsers().subscribe(users=>this.users = users);
@@ -22,8 +22,8 @@ export class UsersComponent implements OnInit {
     console.log(this.users);
   }
 
-  onClickAdd() {
-    this.router.navigate(['/add'])
+  delete(user: User): void {
+    this.userService.deleteUser("10").subscribe();
   }
 
 }
