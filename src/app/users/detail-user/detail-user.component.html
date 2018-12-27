@@ -1,0 +1,16 @@
+<div *ngIf="user">
+  <h2>{{user.username | uppercase}} Details</h2>
+  <div>
+    <label>name:
+      <input [(ngModel)]="user.username" placeholder="name"/>
+    </label>
+    <label>password:
+      <input [(ngModel)]="user.password" placeholder="password"/>
+    </label>
+  </div>
+  <button (click)="save()">save</button>
+  <button (click)="goBack()">go back</button>
+</div>
+<div *ngIf="!user">
+  <h1>Could not found user!</h1>
+</div>

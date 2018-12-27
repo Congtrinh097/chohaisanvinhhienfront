@@ -11,7 +11,7 @@ import { User } from '../models/User';
 export class UsersComponent implements OnInit {
 
   users: User[];
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,  private router: Router) { }
   
   getUsers(): void {
     this.userService.getUsers().subscribe(users=>this.users = users);
@@ -25,4 +25,7 @@ export class UsersComponent implements OnInit {
     this.userService.deleteUser(user).subscribe((user)=>this.getUsers());
   }
 
+  detail(id: String): void {
+    this.router.navigate(["/users/detail/"+id]);
+  }
 }

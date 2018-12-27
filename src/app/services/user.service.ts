@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { User } from  '../models/User';
 import { environment } from '../../environments/environment'
+import { url } from 'inspector';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -37,6 +38,11 @@ export class UserService {
     const url = `${this.url}/${id}`;
 
     return this.http.delete<User>(url, httpOptions);
+  }
+
+  getUser(id: string): Observable<User> {
+    const url = `${this.url}/${id}`;
+    return this.http.get<User>(url,httpOptions);
   }
   
 }
