@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { UserService } from '../services/user.service'
 import { User } from '../models/User';
+import { BlockUiService } from '../services/block-ui.service';
 
 @Component({
   selector: 'app-users',
@@ -11,10 +12,14 @@ import { User } from '../models/User';
 export class UsersComponent implements OnInit {
 
   users: User[];
-  constructor(private userService: UserService,  private router: Router) { }
+  constructor(private userService: UserService,  private router: Router, private blockUiService: BlockUiService,) { }
   
   getUsers(): void {
-    this.userService.getUsers().subscribe(users=>this.users = users);
+    this.blockUiService.blockUi();
+    this.userService.getUsers().subscribe(users=>{ 
+        this.users = users;
+        this.blockUiService.unBlockUi(); 
+      });
   }
 
   ngOnInit() {

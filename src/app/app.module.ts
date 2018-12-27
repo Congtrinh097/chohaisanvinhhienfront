@@ -15,6 +15,7 @@ import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { DetailUserComponent } from './users/detail-user/detail-user.component';
+import { BlockuiComponent } from './components/blockui/blockui.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DetailUserComponent } from './users/detail-user/detail-user.component';
     OrdersComponent,
     AddUserComponent,
     DetailUserComponent,
+    BlockuiComponent,
   ],
   imports: [
     BrowserModule,
