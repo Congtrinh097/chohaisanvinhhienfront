@@ -28,8 +28,13 @@ export class UserService {
 
   /** POST: add the user to the server */
   addUser(user: User): Observable<User> {
-    console.log(user);
     return this.http.post<User>(this.url, user, httpOptions);
+  }
+
+  /** PUT: update the user to the server */
+  updateUser(user: User): Observable<User> {
+    const data = {id: user._id, username: user.username, password: user.password};
+    return this.http.put<User>(this.url, data, httpOptions);
   }
 
   /** DELETE: delete the user from the server */
@@ -39,7 +44,7 @@ export class UserService {
 
     return this.http.delete<User>(url, httpOptions);
   }
-
+  /** GET: Get the user from the server */
   getUser(id: string): Observable<User> {
     const url = `${this.url}/${id}`;
     return this.http.get<User>(url,httpOptions);

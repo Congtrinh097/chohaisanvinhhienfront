@@ -33,7 +33,7 @@ export class DetailUserComponent implements OnInit {
   }
 
   save(): void {
-    // this.userService.updateHero(this.hero)
-    //   .subscribe(() => this.goBack());
+    this.userService.updateUser(this.user)
+      .subscribe(() => this.goBack());
   }
 }
