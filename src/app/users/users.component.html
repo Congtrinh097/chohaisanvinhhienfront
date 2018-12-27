@@ -1,5 +1,5 @@
 <h3>Users list</h3>
-<a  routerLink="/users/add">Add User</a>
+<a   class="btn success" routerLink="/users/add">Add User</a>
 <table width="4000">
   <tr>
     <th>User name</th>
@@ -10,8 +10,8 @@
     <td>{{user.username}}</td>
     <td>{{user.password}}</td>
     <td>
-      <button (click)="delete(user._id)">Delete</button>
-      <button (click)="detail(user._id)">Detail</button>
+      <button class="btn warning" (click)="delete(user._id)">Delete</button>
+      <button class="btn info" (click)="detail(user._id)">Detail</button>
     </td>
   </tr>
 

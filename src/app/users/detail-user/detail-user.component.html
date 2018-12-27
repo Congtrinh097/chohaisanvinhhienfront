@@ -1,17 +1,18 @@
-<div *ngIf="user">
-  <h2>{{user.username | uppercase}} Details</h2>
-  <div>
-    <label>name:
-      <input [(ngModel)]="user.username" placeholder="name" disabled/>
-    </label>
-    <span></span>
-    <label>password:
-      <input [(ngModel)]="user.password" placeholder="password"/>
-    </label>
-  </div>
-  <button (click)="save()">save</button>
-  <button (click)="goBack()">go back</button>
-</div>
-<div *ngIf="!user">
-  <h1>Could not found user!</h1>
+
+<div class="form-container">
+    <h2>{{user.username | uppercase}} Details</h2>
+    <div class="input-container">
+        <i class="fa fa-user icon"></i>
+        <input  [(ngModel)]="user.username" class="input-field" type="text" placeholder="Username" name="usrnm" disabled>
+    </div>
+   
+    <div class="input-container">
+        <i class="fa fa-key icon"></i>
+        <input [(ngModel)]="user.password" class="input-field" type="text" placeholder="Password" name="psw">
+    </div>
+    <div class="buttons-container">
+        <button (click)="save()"  class="btn">Save</button>
+        <button (click)="goBack()"  class="btn">Go back</button>
+    </div>
+   
 </div>
