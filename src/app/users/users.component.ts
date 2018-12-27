@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
 
   delete(user: User): void {
 
-   this.sweetAlertService.confirmPopup("Thông báo", `Bạn có chắc chắn muốn xóa user`,"warning",(result: boolean)=>{
+   this.sweetAlertService.confirmPopup("Thông báo", `Bạn có chắc chắn muốn xóa user ${user.username}`,"warning",(result: boolean)=>{
     if(result) {
       this.userService.deleteUser(user).subscribe((user)=>{
         this.sweetAlertService.alert("", `Đã xóa thành công user ${user.username}`);
