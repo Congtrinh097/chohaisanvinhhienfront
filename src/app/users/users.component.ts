@@ -19,11 +19,10 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
-    console.log(this.users);
   }
 
   delete(user: User): void {
-    this.userService.deleteUser("10").subscribe();
+    this.userService.deleteUser(user).subscribe((user)=>this.getUsers());
   }
 
 }

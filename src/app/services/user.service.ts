@@ -25,13 +25,18 @@ export class UserService {
     return this.http.get<User[]>(this.url, httpOptions);
   }
 
+  /** POST: add the user to the server */
   addUser(user: User): Observable<User> {
     console.log(user);
     return this.http.post<User>(this.url, user, httpOptions);
   }
 
-  deleteUser(id: string): Observable<User> {
-    return this.http.delete<User>(this.url, httpOptions);
+  /** DELETE: delete the user from the server */
+  deleteUser (user: User | string): Observable<User> {
+    const id = typeof user === 'string' ? user : user._id;
+    const url = `${this.url}/${id}`;
+
+    return this.http.delete<User>(url, httpOptions);
   }
   
 }
