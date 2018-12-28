@@ -3,6 +3,8 @@ import { User } from 'src/app/models/User';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { Location } from '@angular/common';
+import { SweetAlertService } from 'src/app/services/sweet-alert.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-detail-user',
@@ -15,8 +17,10 @@ export class DetailUserComponent implements OnInit {
   constructor(  
     private route: ActivatedRoute,
     private userService: UserService,
-    private location: Location) 
-    { }
+    private location: Location,
+    private sweetAlertService: SweetAlertService,
+    private toastService: ToastService
+    ) { }
 
   ngOnInit() {
     this.getUser();
@@ -33,7 +37,14 @@ export class DetailUserComponent implements OnInit {
   }
 
   save(): void {
-    this.userService.updateUser(this.user)
-      .subscribe(() => this.goBack());
+    this.sweetAlertService.confirmPopup("Confirm", `Do you want to update user ?`,"warning",(result: boolean)=>{
+      if(result) {
+        this.userService.updateUser(this.user)
+        .subscribe(() =>{
+          this.toastService.showInfo(`User info is updated !`);
+          this.goBack()
+        });
+      }
+    });
   }
 }
