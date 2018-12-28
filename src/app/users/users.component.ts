@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service'
 import { User } from '../models/User';
 import { BlockUiService } from '../services/block-ui.service';
 import { SweetAlertService } from '../services/sweet-alert.service';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,8 @@ export class UsersComponent implements OnInit {
   constructor(private userService: UserService,  
     private router: Router, 
     private blockUiService: BlockUiService,
-    private sweetAlertService: SweetAlertService
+    private sweetAlertService: SweetAlertService,
+    private toastService: ToastService
     ) { }
   
   getUsers(): void {
@@ -33,10 +35,10 @@ export class UsersComponent implements OnInit {
 
   delete(user: User): void {
 
-   this.sweetAlertService.confirmPopup("Thông báo", `Bạn có chắc chắn muốn xóa user ${user.username}`,"warning",(result: boolean)=>{
+   this.sweetAlertService.confirmPopup("Warning", `Do you want to delete user ${user.username}`,"warning",(result: boolean)=>{
     if(result) {
       this.userService.deleteUser(user).subscribe((user)=>{
-        this.sweetAlertService.alert("", `Đã xóa thành công user ${user.username}`);
+        this.toastService.showInfo(`Successful delete user ${user.username}`);
         this.getUsers();
       });
     }
