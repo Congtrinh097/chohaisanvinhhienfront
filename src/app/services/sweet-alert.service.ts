@@ -21,7 +21,7 @@ export class SweetAlertService {
   confirmPopup(title: string, text?: string, type: string = "warning", callback?: any) {
     swal({
       title: title || "Are you sure?",
-      text: text || "!",
+      text: text || "",
       icon: type,
       buttons:{
         "bt1": {
