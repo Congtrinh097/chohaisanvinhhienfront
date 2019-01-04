@@ -41,3 +41,38 @@ nav {
     background-color: #9c27b0;
     border-bottom: 2px solid rebeccapurple 
   }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 8px -5px rgba(156, 39, 176, 0.4);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  .card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0;
+    margin: 5px;
+    margin-left: 20px;
+  }
+
+  .info {
+    font-size: 10px;
+    text-align: left;
+    padding: 5px;
+  }
+
+  #btn-logout {
+    font-size: 10px;
+    font-weight: bold;
+    position: relative;
+    right: 0px;
+  }
