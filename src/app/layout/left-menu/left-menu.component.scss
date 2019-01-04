@@ -2,12 +2,13 @@
 nav {
     float: left;
     width: 15%;
-    min-width: 200px;
+    min-width: 250px;
     min-height: 450px;
     height: 100%;
-    background: #ccc;
+    background: #fff;
     box-sizing: border-box;
     padding: 20px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
   }
   
   /* Style the list inside the menu */
@@ -15,28 +16,28 @@ nav {
     list-style-type: none;
     padding: 0;
   }
-
-   /* Style the list inside the menu */
-   nav ul li {
-    padding: 15px;
-    font-size: 20;
-    background: #cccccc;
-    border-bottom: 2px solid yellow;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
   
    /* Style the list inside the menu */
    nav ul li a {
+    display: block;
     text-decoration: none;
     font-weight: bold;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 18px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+    border-radius: 5px;
+  }
+
+  nav ul li a i {
+    margin: 5px;
   }
 
 
   
    /* Style the list inside the menu */
-   nav ul li:hover {
-    background: #009124;
+   nav ul li a:hover {
+    background-color: #9c27b0;
     border-bottom: 2px solid rebeccapurple 
   }

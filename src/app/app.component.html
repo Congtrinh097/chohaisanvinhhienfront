@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>{{title}}</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-</head>
-<body>
-  <app-blockui></app-blockui>
-  <app-header></app-header>
-  <section>
-    <app-left-menu></app-left-menu>
-    <div class="content">
-      <router-outlet></router-outlet>
-    </div>
-  </section>
-  <app-footer></app-footer>
+  <div class="wrapper">
+      <app-blockui></app-blockui>
+      <app-left-menu></app-left-menu>
+      <div class="content">
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+      </div>
+  </div>
   
-</body>
-</html>
 
