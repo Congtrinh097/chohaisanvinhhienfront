@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gnservice: GeneralService) { }
 
-  ngOnInit() {
+  ngOnInit(){
+    this.gnservice.updateHeaderTitle("Dashboard");
   }
-
 }

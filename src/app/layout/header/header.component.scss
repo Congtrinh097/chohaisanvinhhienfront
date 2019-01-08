@@ -1,16 +1,18 @@
  /* Style the header */
  header {
-    background-color: #2284a1;
+    background-color: white;
     text-align: center;
     font-size: 30px;
-    color: white;
+    color: #9c27b0;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px
+    padding: 10px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
   }
 
   header > h2 {
     margin: 0px;
+    text-shadow: 2px 2px 4px #000000;
   }

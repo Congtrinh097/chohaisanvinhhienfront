@@ -5,6 +5,7 @@ import { User } from '../models/User';
 import { BlockUiService } from '../services/block-ui.service';
 import { SweetAlertService } from '../services/sweet-alert.service';
 import { ToastService } from '../services/toast.service';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'app-users',
@@ -18,7 +19,8 @@ export class UsersComponent implements OnInit {
     private router: Router, 
     private blockUiService: BlockUiService,
     private sweetAlertService: SweetAlertService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private gnservice: GeneralService
     ) { }
   
   getUsers(): void {
@@ -30,6 +32,7 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.gnservice.updateHeaderTitle("Users");
     this.getUsers();
   }
 
