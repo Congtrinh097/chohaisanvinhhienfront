@@ -1,3 +1,25 @@
-<p>
-  login works!
-</p>
+<div class="main-page">
+  <form (submit)="onSubmit(formSignIn)" #formSignIn="ngForm">
+    <div class="imgcontainer">
+      <img src="assets/user.png" alt="Avatar" class="avatar">
+    </div>
+  
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" [(ngModel)]="username">
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password">
+      <p class="error" *ngIf="error">{{error}}</p>
+      <button type="submit" [disabled]='block'>Login</button>
+     
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>

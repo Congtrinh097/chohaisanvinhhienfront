@@ -46,7 +46,6 @@ export class UserService {
   /** GET: Get the user from the server */
   getUser(id: string): Observable<User> {
     const url = `${this.url}/${id}`;
-    return this.http.get<User>(url,httpOptions);
+    return this.http.get<User>(url, httpOptions);
   }
-  
 }
