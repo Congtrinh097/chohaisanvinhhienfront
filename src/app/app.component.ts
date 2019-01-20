@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GeneralService} from './services/general.service'
+import { GeneralService} from './services/general.service';
 
 @Component({
   selector: 'app-root',
@@ -8,40 +8,40 @@ import { GeneralService} from './services/general.service'
 })
 export class AppComponent {
   title = 'Chợ Hải Sản Quê';
-  headerTitle =  "";
-  constructor(public gnService: GeneralService){
+  headerTitle =  '';
+  constructor(public gnService: GeneralService) {
   }
 
-  ngOnChanges(){
-    console.log("ON ngOnChanges");
-  }
+  // ngOnChanges(){
+  //   console.log("ON ngOnChanges");
+  // }
 
-  ngDoCheck(){
-    console.log("ON ngDoCheck");
-    
-  }
+  // ngDoCheck(){
+  //   console.log("ON ngDoCheck");
 
-  ngOnInit(){
-    console.log("ON ngOnInit");
-  }
+  // }
 
-  ngAfterContentInit(){
-    console.log("ON ngAfterContentInit");
-  }
+  // ngOnInit(){
+  //   console.log("ON ngOnInit");
+  // }
 
-  ngAfterContentChecked(){
-    console.log("ON ngAfterContentChecked");
-  }
+  // ngAfterContentInit(){
+  //   console.log("ON ngAfterContentInit");
+  // }
 
-  ngAfterViewInit(){
-    console.log("ON ngOnAfterViewInit");
-  }
+  // ngAfterContentChecked(){
+  //   console.log("ON ngAfterContentChecked");
+  // }
 
-  ngAfterViewChecked(){
-    console.log("ON ngAfterViewChecked");
-  }
+  // ngAfterViewInit(){
+  //   console.log("ON ngOnAfterViewInit");
+  // }
 
-  ngOnDestroy() {
-    console.log("ON ngOnDestroy");
-  }
+  // ngAfterViewChecked(){
+  //   console.log("ON ngAfterViewChecked");
+  // }
+
+  // ngOnDestroy() {
+  //   console.log("ON ngOnDestroy");
+  // }
 }

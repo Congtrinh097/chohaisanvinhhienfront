@@ -18,6 +18,9 @@ import { OrdersComponent } from './orders/orders.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { DetailUserComponent } from './users/detail-user/detail-user.component';
 import { BlockuiComponent } from './components/blockui/blockui.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MainComponent } from './main/main.component';
+import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +36,17 @@ import { BlockuiComponent } from './components/blockui/blockui.component';
     AddUserComponent,
     DetailUserComponent,
     BlockuiComponent,
+    LoginComponent,
+    MainComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule, 
-    ToastrModule.forRoot()
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
