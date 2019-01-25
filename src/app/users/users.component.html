@@ -1,18 +1,22 @@
-<h3>Users list</h3>
-<a   class="btn success" routerLink="/users/add">Add User</a>
-<table width="4000">
-  <tr>
-    <th>User name</th>
-    <th>Password</th>
-    <th>Action</th>
-  </tr>
-  <tr *ngFor="let user of users">
-    <td>{{user.username}}</td>
-    <td>{{user.password}}</td>
-    <td>
-      <button class="btn warning" (click)="delete(user)">Delete</button>
-      <button class="btn info" (click)="detail(user._id)">Detail</button>
-    </td>
-  </tr>
-
-</table>
+<div class="w3-container">
+  <h3>Users list</h3>
+  <a class="w3-button w3-blue" routerLink="/users/add">Add User</a>
+  <hr/>
+  <table class="w3-table-all">
+    <thead>
+        <tr>
+          <th>User name</th>
+          <th>Password</th>
+          <th>Action</th>
+        </tr>      
+    </thead>
+    <tr *ngFor="let user of users">
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+      <td>
+        <button class="w3-button w3-red" (click)="delete(user)">Delete</button>
+        <button class="w3-button w3-purple" (click)="detail(user._id)">Detail</button>
+      </td>
+    </tr>
+  </table>
+</div>
