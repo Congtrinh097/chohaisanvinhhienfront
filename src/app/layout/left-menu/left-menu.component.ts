@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SweetAlertService } from 'src/app/services/sweet-alert.service';
 import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-left-menu',
   templateUrl: './left-menu.component.html',
@@ -10,7 +11,11 @@ import { DOCUMENT } from '@angular/common';
 })
 export class LeftMenuComponent implements OnInit {
 
-  constructor( private sweetAlertService: SweetAlertService, @Inject(DOCUMENT) private document: Document) { }
+  constructor( 
+    private sweetAlertService: SweetAlertService,
+    @Inject(DOCUMENT) private document: Document,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
@@ -18,9 +23,11 @@ export class LeftMenuComponent implements OnInit {
   logOut() {
     this.sweetAlertService.confirmPopup("Do you want to logout this account?", ``,"warning",(result: boolean)=>{
       if(result) {
+        AuthService.Logout();
+        this.router.navigate(['login']);
         console.log("Loged Out");
       }
-    });
+    }); 
   }
 
   fullScreenMode(){

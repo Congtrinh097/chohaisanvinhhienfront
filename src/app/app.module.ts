@@ -21,6 +21,7 @@ import { BlockuiComponent } from './components/blockui/blockui.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.compone
     ToastrModule.forRoot(),
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

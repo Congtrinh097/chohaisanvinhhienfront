@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { DashboardComponent } from '../app/dashboard/dashboard.component';
 import { UsersComponent } from '../app/users/users.component';
 import { CategoriesComponent } from '../app/categories/categories.component';
@@ -10,12 +10,14 @@ import { DetailUserComponent } from '../app/users/detail-user/detail-user.compon
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '',   redirectTo: 'home/dashboard', pathMatch: 'full' },
   { path: 'home',
     component: MainComponent,
+    canActivate: [AuthGuardService],
     children: [
       { path: '',   redirectTo: 'home/dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
