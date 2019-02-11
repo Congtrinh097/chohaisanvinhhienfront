@@ -17,7 +17,7 @@ export class AddUserComponent implements OnInit {
   }
 
   addNewUser(user: User){
-    this.userService.addUser(user).subscribe(()=>{this.router.navigate(['/users']); this.toastService.showSuccess("Added successfuly!")});
+    this.userService.addUser(user).subscribe(()=>{this.router.navigate(['/home/users']); this.toastService.showSuccess("Added successfuly!")});
   }
 
 }
