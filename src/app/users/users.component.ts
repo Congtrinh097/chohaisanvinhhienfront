@@ -49,6 +49,6 @@ export class UsersComponent implements OnInit {
   }
 
   detail(id: String): void {
-    this.router.navigate(["/users/detail/"+id]);
+    this.router.navigate(["/home/users/detail/"+id]);
   }
 }
