@@ -5,6 +5,7 @@ import { UserService } from 'src/app/services/user.service';
 import { Location } from '@angular/common';
 import { SweetAlertService } from 'src/app/services/sweet-alert.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { BlockUiService } from 'src/app/services/block-ui.service';
 
 @Component({
   selector: 'app-detail-user',
@@ -13,22 +14,35 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class DetailUserComponent implements OnInit {
 
-  @Input() user: User;
+  user: User;
   constructor(  
     private route: ActivatedRoute,
+    private blockUiService: BlockUiService,
     private userService: UserService,
     private location: Location,
     private sweetAlertService: SweetAlertService,
     private toastService: ToastService
-    ) { }
+    ) {
+      this.user = {
+        username:'',
+        password: ''
+      }
+     }
 
-  ngOnInit() {
+  ngOnInit() { 
     this.getUser();
   }
 
   getUser() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.userService.getUser(id).subscribe(user=>this.user = user);
+    this.blockUiService.blockUi();
+    this.userService.getUser(id).subscribe(user=>{
+      this.user = user;
+      this.blockUiService.unBlockUi();
+    },err =>{
+      console.log('Error Getting Users');  
+      this.blockUiService.unBlockUi(); 
+    });
   }  
 
 
