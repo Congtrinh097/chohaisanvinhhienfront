@@ -27,8 +27,10 @@ export class UsersComponent implements OnInit {
     this.blockUiService.blockUi();
     this.userService.getUsers().subscribe(users=>{ 
         this.users = users;
-        this.blockUiService.unBlockUi(); 
+      },err =>{
+        console.log('Error Getting Users');  
       });
+      this.blockUiService.unBlockUi(); 
   }
 
   ngOnInit() {
