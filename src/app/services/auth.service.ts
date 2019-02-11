@@ -14,11 +14,13 @@ export class AuthService {
     return false;
   }
 
-  static LoginSuccess(){
+  static LoginSuccess(token){
     localStorage.setItem("isLogedIn", "true");
+    localStorage.setItem("access_token", token);
   }
 
   static Logout(){
     localStorage.removeItem("isLogedIn");
+    localStorage.removeItem("access_token");
   }
 }

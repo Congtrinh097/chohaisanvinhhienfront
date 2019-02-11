@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(f.value).subscribe((result: HttpResponse) => {
       console.log(result);
       if (result.code === 200) {
-        AuthService.LoginSuccess();
+        AuthService.LoginSuccess(result.token);
         this.router.navigate(['/home/dashboard']);
       } else {
         this.error = result.message;

@@ -6,9 +6,10 @@ import { Observable } from 'rxjs';
 import { User } from  '../models/User';
 import { environment } from '../../environments/environment'
 
-const httpOptions = {
+var httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
+    'Authorization': ''
   })
 };
 
@@ -18,8 +19,15 @@ const httpOptions = {
 export class UserService {
   
   private url = environment.baseUrl + "/api/v1/users";
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    let token = localStorage.getItem('access_token');
+    httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': token
+      })
+    };
+  }
   /** GET: get user from database */
   getUsers (): Observable<User[]> {
     return this.http.get<User[]>(this.url, httpOptions);
