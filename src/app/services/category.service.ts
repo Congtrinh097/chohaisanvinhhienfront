@@ -45,7 +45,7 @@ export class CategoryService {
   }
 
   /** DELETE: delete the cate from the server */
-  deleteCate (cate: Cate | string): Observable<Cate> {
+  deleteCate(cate: Cate | string): Observable<Cate> {
     const id = typeof cate === 'string' ? cate : cate._id;
     const url = `${this.url}/${id}`;
 
