@@ -15,7 +15,8 @@ import { GeneralService } from '../services/general.service';
 export class UsersComponent implements OnInit {
 
   users: User[];
-  constructor(private userService: UserService,  
+  constructor(
+    private userService: UserService,  
     private router: Router, 
     private blockUiService: BlockUiService,
     private sweetAlertService: SweetAlertService,

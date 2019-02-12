@@ -1,3 +1,24 @@
-<p>
-  categories works!
-</p>
+<div class="w3-container">
+  <h3>Categories list</h3>
+  <a class="w3-button w3-blue" routerLink="/home/cates/add">Add New</a>
+  <hr/>
+  <table class="w3-table-all">
+    <thead>
+        <tr>
+          <th>Cate Name</th>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>      
+    </thead>
+    <tr *ngFor="let cate of cates">
+      <td>{{cate.name}}</td>
+      <td><img src="{{ cate.image }}" style="width: 40px; height:40px"/></td>
+      <td>{{cate.description}}</td>
+      <td>
+        <button class="w3-button w3-red" (click)="delete(cate)">Delete</button>
+        <button class="w3-button w3-purple" (click)="detail(cate._id)">Detail</button>
+      </td>
+    </tr>
+  </table>
+</div>
