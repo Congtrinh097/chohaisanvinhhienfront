@@ -22,6 +22,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { AddCateComponent } from './categories/add-cate/add-cate.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     BlockuiComponent,
     LoginComponent,
     MainComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddCateComponent
   ],
   imports: [
     BrowserModule,

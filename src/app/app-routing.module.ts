@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { AddCateComponent } from './categories/add-cate/add-cate.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,11 +23,13 @@ const routes: Routes = [
       { path: '',   redirectTo: 'home/dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'users', component: UsersComponent },
-      { path: 'categories', component: CategoriesComponent },
-      { path: 'products', component: ProductsComponent },
-      { path: 'orders', component: OrdersComponent },
       { path: 'users/add', component: AddUserComponent },
       { path: 'users/detail/:id', component: DetailUserComponent },
+      { path: 'categories', component: CategoriesComponent },
+      { path: 'categories/add', component: AddCateComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'orders', component: OrdersComponent },
+   
     ]
   },
   { path: '**' , component: PageNotFoundComponent},
