@@ -1,3 +1,30 @@
-<p>
-  products works!
-</p>
+<div class="w3-container">
+  <h3>Products list</h3>
+  <a class="w3-button w3-blue" routerLink="/home/products/add">Add New</a>
+  <hr/>
+  <table class="w3-table-all">
+    <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Code</th>
+          <th>Cover Image</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Old Price</th>
+          <th>Action</th>
+        </tr>      
+    </thead>
+    <tr *ngFor="let product of products">
+      <td>{{product?.name}}</td>
+      <td>{{product?.code}}</td>
+      <td><img src="{{ product?.cover_image }}" style="width: 80px; height: 80px"/></td>
+      <td>{{product?.description}}</td>
+      <td>{{product?.price}}</td>
+      <td>{{product?.old_price}}</td>
+      <td>
+        <button class="w3-button w3-red" (click)="delete(product)">Delete</button>
+        <button class="w3-button w3-purple" (click)="detail(product._id)">Detail</button>
+      </td>
+    </tr>
+  </table>
+</div>
