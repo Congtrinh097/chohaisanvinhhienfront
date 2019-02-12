@@ -40,7 +40,7 @@ export class CategoryService {
 
   /** PUT: update the cate to the server */
   updateCate(cate: Cate): Observable<Cate> {
-    const data = {id: cate._id, name: cate.name, description: cate.description};
+    const data = {id: cate._id, name: cate.name, image: cate.image, description: cate.description};
     return this.http.put<Cate>(this.url, data, httpOptions);
   }
 

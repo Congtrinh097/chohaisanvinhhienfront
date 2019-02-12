@@ -23,6 +23,7 @@ import { MainComponent } from './main/main.component';
 import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddCateComponent } from './categories/add-cate/add-cate.component';
+import { DetailComponent } from './categories/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AddCateComponent } from './categories/add-cate/add-cate.component';
     LoginComponent,
     MainComponent,
     PageNotFoundComponent,
-    AddCateComponent
+    AddCateComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

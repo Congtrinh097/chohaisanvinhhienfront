@@ -12,6 +12,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddCateComponent } from './categories/add-cate/add-cate.component';
+import { DetailComponent } from './categories/detail/detail.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'users/detail/:id', component: DetailUserComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'categories/add', component: AddCateComponent },
+      { path: 'categories/detail/:id', component: DetailComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'orders', component: OrdersComponent },
    

@@ -54,7 +54,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   detail(id: String): void {
-    this.router.navigate(["/home/cates/detail/"+id]);
+    this.router.navigate(["/home/categories/detail/"+id]);
   }
 
 }

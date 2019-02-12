@@ -1,0 +1,23 @@
+
+<div class="form-container">
+  <h2>Detail Category</h2>
+  <div class="input-container">
+      <i class="fa fa-align-justify icon"></i>
+      <input [(ngModel)]="cate.name" class="input-field" type="text" placeholder="Name" name="usrnm">
+  </div>
+ 
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input [(ngModel)]="cate.image" class="input-field" type="text" placeholder="Image url" name="Image">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+    <input  [(ngModel)]="cate.description" class="input-field" type="text" placeholder="Description" name="Des">
+  </div>
+
+  <div class="buttons-container">
+    <button (click)="save()"  class="btn">Save</button>
+    <button (click)="goBack()"  class="btn">Go back</button>
+  </div>
+</div>
