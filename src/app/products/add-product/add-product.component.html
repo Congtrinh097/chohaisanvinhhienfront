@@ -1,0 +1,35 @@
+
+<div class="form-container">
+  <h2>Add new product</h2>
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input #name class="input-field" type="text" placeholder="Name" name="usrnm">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input #code class="input-field" type="text" placeholder="Code" name="code">
+  </div>
+ 
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input #img class="input-field" type="text" placeholder="Image url" name="image">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+    <input #description class="input-field" type="text" placeholder="Description" name="description">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+    <input #price class="input-field" type="text" placeholder="Price" name="price">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+    <input #old_price class="input-field" type="text" placeholder="Old price" name="old price">
+  </div>
+
+  <button title="Add new" (click)="addNewProduct({name: name.value, code: code.value, cover_image: img.value, images: null, description: description.value, price: price.value, old_price: old_price.value })" class="btn">Save</button>
+</div>

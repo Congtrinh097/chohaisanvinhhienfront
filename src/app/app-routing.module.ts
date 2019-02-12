@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './pages/pagenotfound/pagenotfound.compone
 import { AuthGuardService } from './services/auth-guard.service';
 import { AddCateComponent } from './categories/add-cate/add-cate.component';
 import { DetailComponent } from './categories/detail/detail.component';
+import { AddProductComponent } from './products/add-product/add-product.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'categories/add', component: AddCateComponent },
       { path: 'categories/detail/:id', component: DetailComponent },
       { path: 'products', component: ProductsComponent },
+      { path: 'products/add', component: AddProductComponent },
       { path: 'orders', component: OrdersComponent },
    
     ]
