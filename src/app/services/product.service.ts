@@ -40,7 +40,16 @@ export class ProductService {
 
   /** PUT: update the product to the server */
   updateProduct(product: Product): Observable<Product> {
-    const data = {id: product._id, name: product.name, description: product.description};
+    const data = {
+      id: product._id, 
+      name: product.name, 
+      code: product.code, 
+      cover_image: product.cover_image, 
+      description: product.description, 
+      price: product.price, 
+      old_price: product.old_price, 
+      images: product.images 
+    };
     return this.http.put<Product>(this.url, data, httpOptions);
   }
 

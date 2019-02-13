@@ -1,0 +1,40 @@
+
+<div class="form-container">
+  <h2>Detail Product</h2>
+  <div class="input-container">
+      <i class="fa fa-align-justify icon"></i>
+      <input [(ngModel)]="product.name" class="input-field" type="text" placeholder="Name" name="usrnm">
+  </div>
+ 
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input [(ngModel)]="product.code" class="input-field" type="text" placeholder="Code" name="Image">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input [(ngModel)]="product.cover_image" class="input-field" type="text" placeholder="Image url" name="image">
+  </div>
+
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+    <input  [(ngModel)]="product.description" class="input-field" type="text" placeholder="Description" name="Des">
+  </div>\
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input [(ngModel)]="product.price" class="input-field" type="text" placeholder="Price" name="price">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-align-justify icon"></i>
+      <input [(ngModel)]="product.old_price" class="input-field" type="text" placeholder="Old price" name="old_price">
+  </div>
+
+
+  <div class="buttons-container">
+    <button (click)="save()"  class="btn">Save</button>
+    <button (click)="goBack()"  class="btn">Go back</button>
+  </div>
+</div>

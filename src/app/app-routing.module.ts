@@ -14,6 +14,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AddCateComponent } from './categories/add-cate/add-cate.component';
 import { DetailComponent } from './categories/detail/detail.component';
 import { AddProductComponent } from './products/add-product/add-product.component';
+import { DetailProductComponent } from './products/detail-product/detail-product.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'categories/detail/:id', component: DetailComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'products/add', component: AddProductComponent },
+      { path: 'products/detail/:id', component: DetailProductComponent },
       { path: 'orders', component: OrdersComponent },
    
     ]
